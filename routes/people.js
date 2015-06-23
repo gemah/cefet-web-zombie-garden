@@ -62,7 +62,7 @@ router.get('/new/', function(req, res) {
 /* DELETE uma pessoa */
 router.delete('/:id/', function(req, res, next) {
   db.query({
-    sql: 'DELETE person WHERE id = ' + db.escape(parseInt(req.params['id']))
+    sql: 'DELETE FROM person WHERE id = ' + db.escape(parseInt(req.params['id']))
     }, function(err, rows) {
       if (err) return res.status(500).send('Erro ao deletar registro de pessoa.');
 
